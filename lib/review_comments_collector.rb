@@ -10,8 +10,7 @@ module ReviewCommentsCollector
   def self.run(args = [])
     config = Config.build_with(args)
     client = GithubClient.new(config)
-    collector = Collector.new(config, client)
-    data = collector.collect
+    data = Collector.new(config, client).collect
     Recorder.output(config, data)
   end
 end

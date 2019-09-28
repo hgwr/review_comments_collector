@@ -2,4 +2,4 @@
 
 require 'review_comments_collector'
 
-ReviewCommentsCollector.run(ARGS)
+ReviewCommentsCollector.run(ARGV)
