@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/hgwr/review_comments_collector.svg?branch=master)](https://travis-ci.org/hgwr/review_comments_collector) 
+[![Gem Version](https://badge.fury.io/rb/review_comments_collector.svg)](https://badge.fury.io/rb/review_comments_collector)
+
 # ReviewCommentsCollector
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/review_comments_collector`. To experiment with that code, run `bin/console` for an interactive prompt.
