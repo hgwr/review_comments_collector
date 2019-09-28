@@ -14,7 +14,7 @@ module ReviewCommentsCollector
         login_with_token
       else
         login_with_password
-        login_with_token
+        warn "GitHub token was generated. Please retry."
       end
     end
 
