@@ -7,8 +7,8 @@ require 'review_comments_collector/recorder'
 module ReviewCommentsCollector
   class Error < StandardError; end
 
-  def self.run(args = [])
-    config = Config.build_with(args)
+  def self.run
+    config = Config.new
     client = GithubClient.new(config)
     data = Collector.new(config, client).collect
     Recorder.output(config, data)
