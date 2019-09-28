@@ -1,4 +1,5 @@
 require 'io/console'
+require 'securerandom'
 require 'octokit'
 require 'yaml'
 
@@ -38,7 +39,7 @@ module ReviewCommentsCollector
         STDERR.flush
 
         options = {
-          note: 'token for review_comments_collector gem',
+          note: "review_comments_collector-#{SecureRandom.uuid.upcase}",
           scopes: %w(read:user user:email repo:status repo_deployment),
           headers: { 'X-GitHub-OTP' => two_fa }
         }
