@@ -4,6 +4,7 @@ require 'review_comments_collector/github_client'
 require 'review_comments_collector/collector'
 require 'review_comments_collector/recorder'
 
+# This is review comment collecgor
 module ReviewCommentsCollector
   class Error < StandardError; end
 
