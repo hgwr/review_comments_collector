@@ -10,12 +10,15 @@ module ReviewCommentsCollector
     end
 
     def connect
-      if @config.token
-        login_with_token
-      else
-        login_with_password
-        warn "GitHub token was generated. Please retry."
-      end
+      client = 
+        if @config.token
+          login_with_token
+        else
+          login_with_password
+          warn "GitHub token was generated. Please retry."
+        end
+      client.auto_paginate = true
+      client
     end
 
     def login_with_token
