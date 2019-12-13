@@ -28,9 +28,15 @@ module ReviewCommentsCollector
     # html_url issue_url review_comment_url
     # patch_url
     
+    # PR_URL_KEYS = %i(
+    #   commits_url
+    #   diff_url
+    #   review_comments_url
+    #   comments_url
+    #   statuses_url
+    # )
+
     PR_URL_KEYS = %i(
-      commits_url
-      diff_url
       review_comments_url
       comments_url
       statuses_url
