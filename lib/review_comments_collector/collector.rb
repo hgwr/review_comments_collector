@@ -49,6 +49,7 @@ module ReviewCommentsCollector
 
     def collect
       pull_request_data = @client.pull_requests(@config.repository, state: 'all').map do |pr|
+        sleep 2
         STDERR.puts("Processing #{@config.repository} ##{pr[:number]} ...")
         ret_val = {}
         PR_KEYS.each do |k|
