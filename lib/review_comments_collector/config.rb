@@ -11,6 +11,7 @@ module ReviewCommentsCollector
     attr_accessor :target_user
     attr_accessor :output
     attr_accessor :token
+    attr_accessor :asana_token
 
     def initialize
       option_hash = ARGV.getopts('', 'login:', 'two_fa', 'repository:', 'user:', 'output:')
@@ -20,7 +21,7 @@ module ReviewCommentsCollector
       read_config
       validate
 
-      %w(login two_fa repository target_user output token).each do |var_name|
+      %w(login two_fa repository target_user output token asana_token).each do |var_name|
         send("#{var_name}=".to_sym, @config[var_name])
       end
     end
@@ -34,7 +35,10 @@ module ReviewCommentsCollector
       end
       if File.readable?(ReviewCommentsCollector::CONFIG_FILENAME)
         config_yaml = YAML.load_file(ReviewCommentsCollector::CONFIG_FILENAME)
-        @config.token = config_yaml[:token] if config_yaml
+        if config_yaml
+          @config.token = config_yaml[:token]
+          @config.asana_token = config_yaml[:asana_personal_access_token]
+        end
       end
       puts "@config = #{@config.inspect}"
     end
