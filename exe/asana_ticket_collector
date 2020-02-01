@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'review_comments_collector'
+
+ReviewCommentsCollector.run_asana
+
